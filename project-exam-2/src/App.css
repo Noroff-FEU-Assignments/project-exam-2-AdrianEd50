@@ -1,0 +1,41 @@
+body { 
+  background: lightblue;
+}
+
+.card { 
+  display: grid;
+  
+}
+
+.home-img { 
+  border-radius: 50%;
+  height: 100%;
+  width: 40%;
+  float: left;
+  margin: 10px 0px 10px 0px;
+}
+
+.ipad-img{ 
+  height: 100%;
+  width: 100%;
+  padding: 10px;
+}
+
+.card-button {
+  background: #1FA710;
+}
+
+.container { 
+  max-width: 1000px;
+  margin:  auto;
+}
+
+/*Contact page*/
+.contact-cta { 
+  background: #1FA710;
+  border: #1FA710;
+}
+
+.contact-cta:hover { 
+  background: #1fa71087;
+}
