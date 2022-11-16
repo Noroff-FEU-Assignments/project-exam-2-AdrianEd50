@@ -4,7 +4,29 @@ body {
 
 .card { 
   display: grid;
-  
+}
+
+nav a { 
+  color: white;
+  text-decoration: none;
+  padding: 7px;
+}
+
+nav a:hover { 
+  color: black;
+  text-decoration: underline;
+}
+
+.navbar-brand {
+  text-decoration: none;
+}
+
+.active { 
+  text-decoration: underline;
+}
+
+h1 { 
+  text-align: center;
 }
 
 .home-img { 
@@ -23,6 +45,11 @@ body {
 
 .card-button {
   background: #1FA710;
+  border: #1FA710;
+}
+
+.card-button:hover { 
+  background: #1fa71087;
 }
 
 .container { 
@@ -34,8 +61,84 @@ body {
 .contact-cta { 
   background: #1FA710;
   border: #1FA710;
-}
+  color: white;
+  border-radius: 7px;
+  padding: 3px 10px;
+  border-radius: 20px;
+  margin-top: 40px;
+  font-size: 1rem;
+  width: 100%;
+  font-family: sans-serif;}
 
 .contact-cta:hover { 
   background: #1fa71087;
 }
+
+.error{ 
+color: red;
+}
+
+form { 
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  margin:auto;
+  padding: 10px;
+  max-width: 1000px;
+}
+
+input, textarea { 
+  color: black;
+  border: 2px solid;
+  border-radius: 5px;
+  padding: 6px;
+  margin: 10px 10px 10px 0px;
+}
+
+
+/*Login page*/
+
+.login-cta { 
+  background: #1FA710;
+  border: #1FA710;
+  color: white;
+  border-radius: 15px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.login-cta:hover { 
+  background: #1fa71087;
+}
+
+.form-error { 
+  color: red;
+}
+
+
+
+.login-input { 
+  width: 100%;
+  border-radius: 15px;
+}
+
+/*Register page*/
+
+.register-cta { 
+  background: #1FA710;
+  border: #1FA710;
+  color: white;
+  border-radius: 15px;
+  padding: 0.5rem;
+  width: 100%;
+}
+
+.register-cta:hover { 
+  background: #1fa71087;
+}
+
+
+
+
+
+

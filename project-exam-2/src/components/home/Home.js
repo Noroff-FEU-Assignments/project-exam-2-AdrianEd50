@@ -6,7 +6,7 @@ function Home() {
   return (
     <>
       <div className="container">
-        <Heading content="Home Page" />
+        <Heading content="Home" />
         <Card />
       </div>
     </>
