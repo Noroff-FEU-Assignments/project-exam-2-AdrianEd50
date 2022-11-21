@@ -4,6 +4,9 @@ import Login from "../login/Login";
 import Register from "../login/Register";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
+//import { useContext } from "react";
+//import { useNavigate } from "react-router-dom";
+//import AuthContext from "../../context/AuthContext";
 
 import {
   BrowserRouter as Router,
@@ -50,3 +53,23 @@ function Layout() {
 }
 
 export default Layout;
+
+/* 
+const [auth, setAuth] = useContext(AuthContext);
+
+  const navigate = useNavigate();
+  function logout() {
+    setAuth(null);
+    navigate("/");
+  }
+
+
+{auth ? (
+                <>
+                  <button onClick={logout}>Log out</button>
+                </>
+              ) : (
+                <NavLink exact to="/login" className="nav-link">
+                  Login
+                </NavLink>
+              )} */

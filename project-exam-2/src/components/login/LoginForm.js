@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
@@ -7,6 +7,7 @@ import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 import FormError from "../../common/FormError";
+//import AuthContext from "../../context/AuthContext";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enteryour username"),
@@ -30,6 +31,7 @@ export default function LoginForm() {
   } = useForm({
     resolver: yupResolver(schema),
   });
+  //const [auth, setAuth] = useContext(AuthContext);
   async function onSubmit(data) {
     setSubmitting(true);
     const login_url = BASE_URL + "social/auth/login";
@@ -39,8 +41,9 @@ export default function LoginForm() {
     try {
       const response = await axios.post(login_url, data);
       console.log(response.data);
+      //setAuth(register.data);
       if (response.ok) {
-        navigate(`/login`, { replace: true });
+        navigate("/", { replace: true });
       } else {
         setLoginError();
       }
@@ -57,7 +60,7 @@ export default function LoginForm() {
       <Form onSubmit={handleSubmit(onSubmit)}>
         {loginError && <FormError>{loginError}</FormError>}
         <Form.Group className="mb-3">
-          <Form.Label>name</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control
             {...register("name")}
             type="text"
@@ -96,11 +99,12 @@ export default function LoginForm() {
         <Button type="submit" className="login-cta">
           {submitting ? "Logging in..." : "Login"}
         </Button>
-        <div>
-          <p>Do you not have an account?</p>
-          <Link to="/register">Register here</Link>
-        </div>
       </Form>
+      <div>
+        <p>
+          Do you not have an account? <Link to="/register">Register here</Link>
+        </p>
+      </div>
     </>
   );
 }

@@ -6,7 +6,7 @@ import FormValidation from "./FormValidation";
 function Contact() {
   return (
     <>
-      <div className="container">
+      <div className="white-background-container">
         <Heading content="Contact" />
         <FormValidation />
       </div>

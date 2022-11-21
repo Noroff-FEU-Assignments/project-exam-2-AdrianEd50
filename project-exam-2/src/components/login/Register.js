@@ -4,8 +4,10 @@ import RegisterForm from "./RegisterForm";
 function Register() {
   return (
     <>
-      <Heading content="Register" />
-      <RegisterForm />
+      <div className="white-background-container">
+        <Heading content="Register" />
+        <RegisterForm />
+      </div>
     </>
   );
 }

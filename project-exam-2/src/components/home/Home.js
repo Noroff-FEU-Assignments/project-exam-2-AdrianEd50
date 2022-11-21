@@ -5,7 +5,7 @@ import Card from "../cardContent/Card";
 function Home() {
   return (
     <>
-      <div className="container">
+      <div className="white-background-container">
         <Heading content="Home" />
         <Card />
       </div>

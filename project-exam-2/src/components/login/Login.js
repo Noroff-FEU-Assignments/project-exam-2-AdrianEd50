@@ -6,8 +6,10 @@ import LoginForm from "./LoginForm";
 function LoginPage() {
   return (
     <>
-      <Heading content="Login" />
-      <LoginForm />
+      <div className="white-background-container">
+        <Heading content="Login" />
+        <LoginForm />
+      </div>
     </>
   );
 }

@@ -29,6 +29,12 @@ h1 {
   text-align: center;
 }
 
+.white-background-container { 
+  background: white;
+  padding: 15px;
+  margin: 50px;
+}
+
 .home-img { 
   border-radius: 50%;
   height: 100%;
@@ -101,7 +107,7 @@ input, textarea {
 .login-cta { 
   background: #1FA710;
   border: #1FA710;
-  color: white;
+  color: black;
   border-radius: 15px;
   padding: 0.5rem;
   width: 100%;
@@ -109,6 +115,7 @@ input, textarea {
 
 .login-cta:hover { 
   background: #1fa71087;
+  color: black;
 }
 
 .form-error { 
@@ -120,6 +127,7 @@ input, textarea {
 .login-input { 
   width: 100%;
   border-radius: 15px;
+  border: solid 2px black;
 }
 
 /*Register page*/
@@ -127,7 +135,7 @@ input, textarea {
 .register-cta { 
   background: #1FA710;
   border: #1FA710;
-  color: white;
+  color: black;
   border-radius: 15px;
   padding: 0.5rem;
   width: 100%;
@@ -135,6 +143,7 @@ input, textarea {
 
 .register-cta:hover { 
   background: #1fa71087;
+  color: black;
 }
 
 

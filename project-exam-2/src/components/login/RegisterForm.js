@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -45,7 +45,8 @@ export default function RegisterForm() {
       const response = await axios.post(REGISTER_URL, data);
       console.log(response.data);
       if (response.ok) {
-        navigate(`/login`, { replace: true });
+        navigate(`/login`);
+        console.log(response.ok);
       } else {
         setRegisterError();
       }
@@ -104,6 +105,7 @@ export default function RegisterForm() {
           {submitting ? "Registering in..." : "Register"}
         </Button>
       </Form>
+      <Link to="/login">Return to login page</Link>
     </>
   );
 }
