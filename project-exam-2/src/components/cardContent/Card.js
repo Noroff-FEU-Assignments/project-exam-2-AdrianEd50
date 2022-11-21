@@ -9,7 +9,7 @@ import Col from "react-bootstrap/Col";
 function CardContent() {
   return (
     <>
-      <Container classname="container" fluid="md">
+      <Container className="container" fluid="md">
         <Row>
           <Col>
             <Card className="card" style={{ width: "21rem" }}>

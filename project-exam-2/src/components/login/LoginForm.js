@@ -40,10 +40,10 @@ export default function LoginForm() {
 
     try {
       const response = await axios.post(login_url, data);
-      console.log(response.data);
+      console.log(response.status === 200);
       //setAuth(register.data);
-      if (response.ok) {
-        navigate("/", { replace: true });
+      if (response.status === 200) {
+        navigate(`/`);
       } else {
         setLoginError();
       }

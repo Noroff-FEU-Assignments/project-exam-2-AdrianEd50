@@ -43,10 +43,9 @@ export default function RegisterForm() {
 
     try {
       const response = await axios.post(REGISTER_URL, data);
-      console.log(response.data);
-      if (response.ok) {
+      console.log(response.status === 201);
+      if (response.status === 201) {
         navigate(`/login`);
-        console.log(response.ok);
       } else {
         setRegisterError();
       }
