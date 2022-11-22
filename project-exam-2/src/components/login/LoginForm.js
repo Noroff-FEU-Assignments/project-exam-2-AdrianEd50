@@ -7,7 +7,7 @@ import { Form, Button } from "react-bootstrap";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 import FormError from "../../common/FormError";
-//import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enteryour username"),
@@ -31,7 +31,9 @@ export default function LoginForm() {
   } = useForm({
     resolver: yupResolver(schema),
   });
-  //const [auth, setAuth] = useContext(AuthContext);
+
+  const [auth, setAuth] = useContext(AuthContext);
+
   async function onSubmit(data) {
     setSubmitting(true);
     const login_url = BASE_URL + "social/auth/login";
@@ -41,9 +43,9 @@ export default function LoginForm() {
     try {
       const response = await axios.post(login_url, data);
       console.log(response.status === 200);
-      //setAuth(register.data);
+      setAuth(response.status === 200);
       if (response.status === 200) {
-        navigate(`/`);
+        navigate(`/posts`);
       } else {
         setLoginError();
       }

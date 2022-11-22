@@ -1,10 +1,15 @@
 import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import ipad from "../../images/ipad.jpg";
-import homeImg from "../../images/elkjøp.jpg";
+import message from "../../images/message.jpg";
+import smiling from "../../images/smiling.png";
+import love from "../../images/love.png";
+import emoji from "../../images/emoji.png";
+import angry from "../../images/angry.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+//import TextArea from "../home/TextArea";
+import Textarea from "../home/TextArea";
 
 function CardContent() {
   return (
@@ -14,16 +19,9 @@ function CardContent() {
           <Col>
             <Card className="card" style={{ width: "21rem" }}>
               <Card.Body>
-                <Card.Img variant="top" className="home-img" src={homeImg} />
-                <Card.Title className="post">Posted a new post</Card.Title>
-                <Card.Text>1d</Card.Text>
-                <Card.Text>iPad 10,9" (2022) 256GB 5G (blå)</Card.Text>
-                <br />
-                <Button variant="primary" className="card-button">
-                  View
-                </Button>
+                <Card.Title className="post"></Card.Title>
               </Card.Body>
-              <Card.Img variant="top" className="ipad-img" src={ipad} />
+              <Card.Img variant="top" className="ipad-img" src={message} />
             </Card>
           </Col>
         </Row>
@@ -32,88 +30,15 @@ function CardContent() {
           <Col>
             <Card className="card" style={{ width: "21rem" }}>
               <Card.Body>
-                <Card.Img variant="top" className="home-img" src={homeImg} />
-                <Card.Title className="post">Posted a new post</Card.Title>
-                <Card.Text>1d</Card.Text>
-                <Card.Text>iPad 10,9" (2022) 256GB 5G (blå)</Card.Text>
-                <br />
-                <Button variant="primary" className="card-button">
-                  View
-                </Button>
+                <Card.Title className="post"></Card.Title>
               </Card.Body>
-              <Card.Img variant="top" className="ipad-img" src={ipad} />
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Card className="card" style={{ width: "21rem" }}>
-              <Card.Body>
-                <Card.Img variant="top" className="home-img" src={homeImg} />
-                <Card.Title className="post">Posted a new post</Card.Title>
-                <Card.Text>1d</Card.Text>
-                <Card.Text>iPad 10,9" (2022) 256GB 5G (blå)</Card.Text>
-                <br />
-                <Button variant="primary" className="card-button">
-                  View
-                </Button>
-              </Card.Body>
-              <Card.Img variant="top" className="ipad-img" src={ipad} />
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Card className="card" style={{ width: "21rem" }}>
-              <Card.Body>
-                <Card.Img variant="top" className="home-img" src={homeImg} />
-                <Card.Title className="post">Posted a new post</Card.Title>
-                <Card.Text>1d</Card.Text>
-                <Card.Text>iPad 10,9" (2022) 256GB 5G (blå)</Card.Text>
-                <br />
-                <Button variant="primary" className="card-button">
-                  View
-                </Button>
-              </Card.Body>
-              <Card.Img variant="top" className="ipad-img" src={ipad} />
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Card className="card" style={{ width: "21rem" }}>
-              <Card.Body>
-                <Card.Img variant="top" className="home-img" src={homeImg} />
-                <Card.Title className="post">Posted a new post</Card.Title>
-                <Card.Text>1d</Card.Text>
-                <Card.Text>iPad 10,9" (2022) 256GB 5G (blå)</Card.Text>
-                <br />
-                <Button variant="primary" className="card-button">
-                  View
-                </Button>
-              </Card.Body>
-              <Card.Img variant="top" className="ipad-img" src={ipad} />
-            </Card>
-          </Col>
-        </Row>
-
-        <Row>
-          <Col>
-            <Card className="card" style={{ width: "21rem" }}>
-              <Card.Body>
-                <Card.Img variant="top" className="home-img" src={homeImg} />
-                <Card.Title className="post">Posted a new post</Card.Title>
-                <Card.Text>1d</Card.Text>
-                <Card.Text>iPad 10,9" (2022) 256GB 5G (blå)</Card.Text>
-                <br />
-                <Button variant="primary" className="card-button">
-                  View
-                </Button>
-              </Card.Body>
-              <Card.Img variant="top" className="ipad-img" src={ipad} />
+              <Textarea />
+              <Button>Post</Button>
+              <Button>Coment</Button>
+              <Card.Img variant="top" className="emoji-img" src={smiling} />
+              <Card.Img variant="top" className="emoji-img" src={love} />
+              <Card.Img variant="top" className="emoji-img" src={angry} />
+              <Card.Img variant="top" className="emoji-img" src={emoji} />
             </Card>
           </Col>
         </Row>

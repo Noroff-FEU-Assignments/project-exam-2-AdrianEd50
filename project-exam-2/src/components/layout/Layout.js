@@ -1,4 +1,4 @@
-import Home from "../home/Home";
+/*import Home from "../home/Home";
 import Contact from "../contact/Contact";
 import Login from "../login/Login";
 import Register from "../login/Register";
@@ -6,7 +6,8 @@ import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 //import { useContext } from "react";
 //import { useNavigate } from "react-router-dom";
-//import AuthContext from "../../context/AuthContext";
+import AuthContext from "../../context/AuthContext";
+import { AuthProvider } from "../../context/AuthContext";
 
 import {
   BrowserRouter as Router,
@@ -52,7 +53,7 @@ function Layout() {
   );
 }
 
-export default Layout;
+export default Layout;*/
 
 /* 
 const [auth, setAuth] = useContext(AuthContext);

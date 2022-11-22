@@ -2,9 +2,7 @@ body {
   background: lightblue;
 }
 
-.card { 
-  display: grid;
-}
+
 
 nav a { 
   color: white;
@@ -49,19 +47,50 @@ h1 {
   padding: 10px;
 }
 
+.container { 
+  max-width: 1000px;
+  margin:  auto;
+}
+
+/*CTA*/
 .card-button {
   background: #1FA710;
   border: #1FA710;
+  padding: 7px;
+  margin: 10px;
 }
 
 .card-button:hover { 
   background: #1fa71087;
 }
 
-.container { 
-  max-width: 1000px;
-  margin:  auto;
+.login-cta { 
+  background: #1FA710;
+  border: #1FA710;
+  color: black;
+  border-radius: 15px;
+  padding: 0.5rem;
+  width: 100%;
 }
+
+.login-cta:hover { 
+  background: #1fa71087;
+  color: black;
+}
+
+.logout-cta { 
+  background: #1FA710;
+  border: #1FA710;
+  padding: 5px;
+  margin: 5px;
+  border-radius: 15px;
+}
+
+.logout-cta:hover { 
+  background: #1fa71087;
+  text-decoration: underline;
+}
+
 
 /*Contact page*/
 .contact-cta { 
@@ -103,26 +132,9 @@ input, textarea {
 
 
 /*Login page*/
-
-.login-cta { 
-  background: #1FA710;
-  border: #1FA710;
-  color: black;
-  border-radius: 15px;
-  padding: 0.5rem;
-  width: 100%;
-}
-
-.login-cta:hover { 
-  background: #1fa71087;
-  color: black;
-}
-
 .form-error { 
   color: red;
 }
-
-
 
 .login-input { 
   width: 100%;
@@ -145,6 +157,22 @@ input, textarea {
   background: #1fa71087;
   color: black;
 }
+
+
+/*Card*/
+.emoji-img { 
+  max-width: 100%;
+  height: 100%;
+  width: 30px;
+}
+
+.card { 
+  margin: 10px;
+  padding: 10px;
+}
+
+
+
 
 
 
