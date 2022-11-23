@@ -81,9 +81,9 @@ h1 {
 .logout-cta { 
   background: #1FA710;
   border: #1FA710;
-  padding: 5px;
+  padding: 2px;
   margin: 5px;
-  border-radius: 15px;
+  border-radius: 5px;
 }
 
 .logout-cta:hover { 

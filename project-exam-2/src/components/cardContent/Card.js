@@ -8,7 +8,6 @@ import angry from "../../images/angry.png";
 import Container from "react-bootstrap/Container";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
-//import TextArea from "../home/TextArea";
 import Textarea from "../home/TextArea";
 
 function CardContent() {
