@@ -13,6 +13,7 @@ export default function ListOfPosts() {
   useEffect(function () {
     async function retrivePosts() {
       const post_url = BASE_URL + "social/posts";
+
       try {
         const response = await http.get(post_url);
         console.log("response", response);

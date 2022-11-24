@@ -16,7 +16,7 @@ function Navigation() {
   }
 
   return (
-    <navigation>
+    <>
       <Navbar bg="light" variant="light" expand="lg">
         <NavLink to="/" end>
           <Navbar.Brand to="/">Social Scoop</Navbar.Brand>
@@ -49,7 +49,7 @@ function Navigation() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
-    </navigation>
+    </>
   );
 }
 
