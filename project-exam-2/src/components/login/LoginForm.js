@@ -43,9 +43,9 @@ export default function LoginForm() {
 
     try {
       const response = await axios.post(login_url, data);
-      console.log(response.status === 200);
-      setAuth(response.status === 200);
-      if (response.status === 200) {
+      console.log(response.data);
+      setAuth(response.data);
+      if (response.data) {
         navigate(`/posts`);
       } else {
         setLoginError();

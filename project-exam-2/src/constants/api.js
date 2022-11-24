@@ -1,3 +1,1 @@
 export const BASE_URL = "https://nf-api.onrender.com/api/v1/";
-export const TOKEN =
-  "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NDYxLCJuYW1lIjoiYWRyaWFuIiwiZW1haWwiOiJhZHJpYW4ubGFmamVsbEBzdHVkLm5vcm9mZi5ubyIsImF2YXRhciI6bnVsbCwiYmFubmVyIjpudWxsLCJpYXQiOjE2NjkyOTMzMjJ9.vBNIOfWK8AsDMizjYuSCRZIqG-q_prxqfjyWA4TWu40";

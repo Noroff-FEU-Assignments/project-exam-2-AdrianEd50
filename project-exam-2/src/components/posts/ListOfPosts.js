@@ -11,12 +11,12 @@ export default function ListOfPosts() {
   const http = useAxios();
 
   useEffect(function () {
-    async function retrivePosts() {
+    async function retrivePosts(data) {
       const post_url = BASE_URL + "social/posts";
 
       try {
-        const response = await http.get(post_url);
-        console.log("response", response);
+        const response = await http.get(post_url, data);
+        console.log("response", response.data);
         setPosts(response.data);
       } catch (error) {
         console.log(error);
