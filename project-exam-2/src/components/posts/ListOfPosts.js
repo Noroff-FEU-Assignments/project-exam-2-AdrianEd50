@@ -11,12 +11,12 @@ export default function ListOfPosts() {
   const http = useAxios();
 
   useEffect(function () {
-    async function retrivePosts(data) {
-      const post_url = BASE_URL + "social/posts";
+    async function retrivePosts() {
+      //const post_url = BASE_URL + "social/posts";
 
       try {
-        const response = await http.get(post_url, data);
-        console.log("response", response.data);
+        const response = await http.get("social/posts");
+        console.log("response", response);
         setPosts(response.data);
       } catch (error) {
         console.log(error);
@@ -36,7 +36,7 @@ export default function ListOfPosts() {
       {posts.map((post) => {
         return (
           <li key={post.id}>
-            <Link to={`/posts/edit/${post.id}`}>{post.title.rendered}</Link>
+            <Link to={`/posts/edit/${post.id}`}>{post.title}</Link>
           </li>
         );
       })}

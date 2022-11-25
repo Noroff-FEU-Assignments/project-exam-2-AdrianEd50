@@ -9,7 +9,7 @@ export default function useAxios() {
   const [auth] = useContext(AuthContext);
 
   const apiClient = axios.create({
-    BASE_URL: url,
+    baseURL: url,
   });
 
   apiClient.interceptors.request.use(function (config) {
