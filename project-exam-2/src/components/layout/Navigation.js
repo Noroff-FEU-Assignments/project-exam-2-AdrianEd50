@@ -4,13 +4,14 @@ import Navbar from "react-bootstrap/Navbar";
 import { NavLink, useNavigate } from "react-router-dom";
 import { useContext } from "react";
 import AuthContext from "../../context/AuthContext";
-import user from "../../images/user.png";
+import { clearStorage } from "../../utils/storage";
 
 function Navigation() {
   const [auth, setAuth] = useContext(AuthContext);
 
   const navigate = useNavigate();
   function logout() {
+    clearStorage();
     setAuth(null);
     navigate("/");
   }
@@ -36,9 +37,13 @@ function Navigation() {
                 <button onClick={logout} className="logout-cta">
                   Log out
                 </button>
+
+                <NavLink to="/posts/posts/add" className="nav-link">
+                  Add Post
+                </NavLink>
               </>
             ) : (
-              <NavLink exact to="/login" className="nav-link">
+              <NavLink to="/login" className="nav-link">
                 Login
               </NavLink>
             )}

@@ -1,6 +1,5 @@
 import React from "react";
 import Heading from "../layout/Heading";
-import Card from "../cardContent/Card";
 import { Link } from "react-router-dom";
 import ListOfPosts from "./ListOfPosts";
 
@@ -9,10 +8,12 @@ function Posts() {
     <>
       <div className="white-background-container">
         <Heading content="Posts" />
-        <Card />
-        <p>
-          <Link to="/posts/posts/add">Add Post</Link>
-        </p>
+        <button className="add-btn">
+          <Link to="/posts/posts/add" className="add-btn">
+            Add Post
+          </Link>
+        </button>
+
         <ListOfPosts />
       </div>
     </>

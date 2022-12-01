@@ -25,9 +25,9 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/posts" element={<Posts />} />
-            <Route path="/posts/posts" element={<PostsPage />} />
+            <Route path="/posts/posts" exact element={<PostsPage />} />
             <Route path="/posts/posts/add" element={<AddPost />} />
-            <Route path="/posts/posts/edit:id" element={<EditPost />} />
+            <Route path="/posts/posts/:id" element={<EditPost />} />
           </Routes>
         </Container>
       </Router>

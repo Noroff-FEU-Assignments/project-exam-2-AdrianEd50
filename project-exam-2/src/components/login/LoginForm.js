@@ -8,6 +8,7 @@ import axios from "axios";
 import { BASE_URL } from "../../constants/api";
 import FormError from "../../common/FormError";
 import AuthContext from "../../context/AuthContext";
+import { saveToken, saveUsername, saveUserEmail } from "../../utils/storage";
 
 const schema = yup.object().shape({
   name: yup.string().required("Please enteryour username"),
@@ -19,6 +20,7 @@ const schema = yup.object().shape({
 });
 
 export default function LoginForm() {
+  //const new_user = localStorage.getItem("new_user");
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
 
@@ -44,6 +46,9 @@ export default function LoginForm() {
     try {
       const response = await axios.post(login_url, data);
       console.log(response.data);
+      saveToken(response.data.accessToken);
+      //saveUsername(response.data.name);
+      //saveUserEmail(response.data.email);
       setAuth(response.data);
       if (response.data) {
         navigate(`/posts`);

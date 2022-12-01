@@ -1,22 +1,27 @@
 import { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
-import useAxios from "../../customHooks/useAxios";
+import axios from "axios";
+import PostCard from "./PostCard";
+import { token } from "../../utils/storage";
 
 export default function ListOfPosts() {
   const [posts, setPosts] = useState([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  const http = useAxios();
-
   useEffect(function () {
     async function retrivePosts() {
-      //const post_url = BASE_URL + "social/posts";
+      const post_url = BASE_URL + "social/posts/?_author=true&_reactions=true";
+
+      const options = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
 
       try {
-        const response = await http.get("social/posts");
-        console.log("response", response);
+        const response = await axios.get(post_url, options);
+        console.log(response.data);
         setPosts(response.data);
       } catch (error) {
         console.log(error);
@@ -32,14 +37,20 @@ export default function ListOfPosts() {
   if (error) return <div>{}</div>;
 
   return (
-    <ul className="posts">
-      {posts.map((post) => {
-        return (
-          <li key={post.id}>
-            <Link to={`/posts/edit/${post.id}`}>{post.title}</Link>
-          </li>
-        );
-      })}
-    </ul>
+    <div className="post-list">
+      {posts.map((post) => (
+        <PostCard
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          src={post.media}
+          comment_count={post._count.comments}
+          reaction_count={post._count.reactions}
+          created={post.created}
+          href={post.id}
+          author={post.author.name}
+        />
+      ))}
+    </div>
   );
 }

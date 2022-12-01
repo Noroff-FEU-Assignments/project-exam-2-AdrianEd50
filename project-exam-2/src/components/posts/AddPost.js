@@ -4,60 +4,90 @@ import { useNavigate } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
-//import FormError from "../../common/FormError";
+import { Form, Button } from "react-bootstrap";
+import FormError from "../../common/FormError";
 import Heading from "../layout/Heading";
-import useAxios from "../../customHooks/useAxios";
+import axios from "axios";
+import { BASE_URL } from "../../constants/api";
 
 const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
 });
 
 function AddPost() {
-  const [submitting, setSbmitting] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
   const [serverError, setServerError] = useState(null);
 
   const navigate = useNavigate();
-  const http = useAxios();
 
-  const { register, handleSubmit, errors } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm({
     resolver: yupResolver(schema),
   });
 
-  async function onSubmit(data) {
-    setSbmitting(true);
-    setServerError(null);
+  const addPostUrl = BASE_URL + "social/posts";
 
-    data.status = "publish";
+  async function onSubmit(data) {
+    setSubmitting(true);
+    setServerError(null);
 
     console.log(data);
 
     try {
-      const response = await http.post("/api/v1/social/posts", data);
-      console.log("response", response.data);
+      const response = await axios.post(addPostUrl, data);
+      console.log(response.data);
       navigate("/posts/posts");
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
     } finally {
-      setSbmitting(false);
+      setSubmitting(false);
     }
   }
   return (
     <>
       <Heading content="Add Post" />
-      <form onSubmit={handleSubmit(onSubmit)}>
-        <fieldset disabled={submitting}>
-          <div>
-            <input name="title" placeholder="Content" ref={register} />
-          </div>
+      <Form onSubmit={handleSubmit(onSubmit)}>
+        {serverError && <FormError>{serverError}</FormError>}
+        <Form.Group className="mb-3">
+          <Form.Label>Title</Form.Label>
+          <Form.Control
+            {...register("title")}
+            type="text"
+            placeholder="Write your title"
+          />
+          <Form.Text className="text-muted"></Form.Text>
+          {errors.title && <FormError>{errors.title.message}</FormError>}
+        </Form.Group>
 
-          <div>
-            <textarea name="content" placeholder="Content" ref={register} />
-          </div>
+        <Form.Group className="mb-3">
+          <Form.Label>Body</Form.Label>
+          <Form.Control
+            {...register("body")}
+            placeholder="Write your text here"
+          />
+          <Form.Text className="text-muted"></Form.Text>
+          {errors.body && <FormError>{errors.body.message}</FormError>}
+        </Form.Group>
 
-          <button>{submitting ? "submitting..." : "Submit"}</button>
-        </fieldset>
-      </form>
+        <Form.Group className="mb-3">
+          <Form.Label>Image</Form.Label>
+          <Form.Control
+            {...register("image")}
+            placeholder="Enter your image url here"
+          />
+          <Form.Text className="text-muted">
+            Must be a fully formed URL
+          </Form.Text>
+          {errors.image && <FormError>{errors.image.message}</FormError>}
+        </Form.Group>
+        <Button className="addPost-btn">
+          {submitting ? "Adding..." : "Add"}
+        </Button>
+      </Form>
     </>
   );
 }
@@ -66,4 +96,35 @@ export default AddPost;
 
 /*{errors.title && <FormError>{errors.title.message}</FormError>}
 {serverError && <FormError>{serverError}</FormError>}
+
+<button >
+            {submitting ? "adding..." : "Add"}
+          </button>
+          
+          
+          
+          
+          
+          
+          <form onSubmit={handleSubmit(onSubmit)}>
+        {serverError && <FormError>{serverError}</FormError>}
+        <fieldset disabled={submitting}>
+          <div>
+            <input name="title" placeholder="Title" {...register} />
+            {errors.title && <FormError>{errors.title.message}</FormError>}
+          </div>
+
+          <div>
+            <textarea name="body" placeholder="Body" {...register} />
+          </div>
+
+          <div>
+            <input name="Image" placeholder="Image" {...register} />
+          </div>
+
+          <button type="submit" className="addPost-btn">
+            {submitting ? "adding..." : "Add"}
+          </button>
+        </fieldset>
+      </form>
  */
