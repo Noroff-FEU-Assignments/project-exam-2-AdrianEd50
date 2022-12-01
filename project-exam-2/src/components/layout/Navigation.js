@@ -38,7 +38,7 @@ function Navigation() {
                   Log out
                 </button>
 
-                <NavLink to="/posts/posts/add" className="nav-link">
+                <NavLink to="/posts/add" className="nav-link">
                   Add Post
                 </NavLink>
               </>

@@ -17,10 +17,7 @@ export default function PostCard(post) {
   return (
     <>
       <div className="post-card" href={`/post/${post.title}`}>
-        <a
-          href={`/posts/posts/${post.href}`}
-          className="post-card__content-footer"
-        >
+        <a href={`/posts/${post.href}`} className="post-card__content-footer">
           <div className="post-card__content-text">
             <h2>{post.title}</h2>
           </div>
@@ -39,7 +36,8 @@ export default function PostCard(post) {
           )}
         </div>
 
-        <div className="post-id">{post.created}</div>
+        <div className="post-id">Created: {post.created}</div>
+        <div className="post-id">Author: {post.author}</div>
 
         <div className="reactions">
           <div className="reaction-buttons">

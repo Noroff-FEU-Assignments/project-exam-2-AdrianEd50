@@ -246,7 +246,10 @@ input, textarea {
   text-decoration: underline;
 }
 
-
+/*Edit page*/
+.success { 
+  color: #1FA710;
+}
 
 
 

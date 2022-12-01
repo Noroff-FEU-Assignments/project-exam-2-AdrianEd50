@@ -6,10 +6,8 @@ import Register from "../src/components/login/Register";
 import Posts from "./components/posts/PostsPage";
 import Navigation from "./components/layout/Navigation";
 import { AuthProvider } from "./context/AuthContext";
-import PostsPage from "../src/components/posts/PostsPage";
 import AddPost from "../src/components/posts/AddPost";
 import EditPost from "../src/components/posts/EditPost";
-
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
@@ -25,9 +23,8 @@ function App() {
             <Route path="/register" element={<Register />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/posts" element={<Posts />} />
-            <Route path="/posts/posts" exact element={<PostsPage />} />
-            <Route path="/posts/posts/add" element={<AddPost />} />
-            <Route path="/posts/posts/:id" element={<EditPost />} />
+            <Route path="/posts/add" element={<AddPost />} />
+            <Route path="/posts/:id" element={<EditPost />} />
           </Routes>
         </Container>
       </Router>
@@ -36,3 +33,4 @@ function App() {
 }
 
 export default App;
+//<Route path="/posts/posts" exact element={<PostsPage />} />

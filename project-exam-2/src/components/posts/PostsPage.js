@@ -9,7 +9,7 @@ function Posts() {
       <div className="white-background-container">
         <Heading content="Posts" />
         <button className="add-btn">
-          <Link to="/posts/posts/add" className="add-btn">
+          <Link to="/posts/add" className="add-btn">
             Add Post
           </Link>
         </button>

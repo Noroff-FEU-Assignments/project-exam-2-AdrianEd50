@@ -9,6 +9,7 @@ import FormError from "../../common/FormError";
 import Heading from "../layout/Heading";
 import axios from "axios";
 import { BASE_URL } from "../../constants/api";
+import { token } from "../../utils/storage";
 
 const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
@@ -36,10 +37,16 @@ function AddPost() {
 
     console.log(data);
 
+    const options = {
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    };
+
     try {
-      const response = await axios.post(addPostUrl, data);
+      const response = await axios.post(addPostUrl, data, options);
       console.log(response.data);
-      navigate("/posts/posts");
+      navigate("/posts");
     } catch (error) {
       console.log("error", error);
       setServerError(error.toString());
@@ -84,7 +91,7 @@ function AddPost() {
           </Form.Text>
           {errors.image && <FormError>{errors.image.message}</FormError>}
         </Form.Group>
-        <Button className="addPost-btn">
+        <Button type="submit" className="addPost-btn">
           {submitting ? "Adding..." : "Add"}
         </Button>
       </Form>
