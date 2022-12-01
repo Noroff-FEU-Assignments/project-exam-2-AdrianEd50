@@ -6,7 +6,7 @@ import ListOfPosts from "./ListOfPosts";
 function Posts() {
   return (
     <>
-      <div className="white-background-container">
+      <div>
         <Heading content="Posts" />
         <button className="add-btn">
           <Link to="/posts/add" className="add-btn">

@@ -90,7 +90,7 @@ function EditPost() {
 
   return (
     <>
-      <Heading content="Edit post" />
+      <Heading content="Update post" />
       <Form onSubmit={handleSubmit(onSubmit)}>
         {updated && (
           <div className="success">The post was successfully updated</div>
@@ -132,7 +132,9 @@ function EditPost() {
           </Form.Text>
           {updateError && <FormError>{updateError}</FormError>}
         </Form.Group>
-        <Button type="submit">{submitting ? "Updating..." : "Update"}</Button>
+        <Button className="edit_bt-cta" type="submit">
+          {submitting ? "Updating..." : "Update"}{" "}
+        </Button>
       </Form>
     </>
   );

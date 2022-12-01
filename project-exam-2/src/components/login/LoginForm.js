@@ -88,13 +88,13 @@ export default function LoginForm() {
             className="login-input"
           />
           <Form.Text className="text-muted">
-            Enter a valid noroff student email
+            Must be a valid noroff student email
           </Form.Text>
           {errors.email && <FormError>{errors.email.message}</FormError>}
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>password</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             {...register("password")}
             type="password"

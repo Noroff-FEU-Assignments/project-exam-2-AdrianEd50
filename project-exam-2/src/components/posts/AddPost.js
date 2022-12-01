@@ -56,45 +56,50 @@ function AddPost() {
   }
   return (
     <>
-      <Heading content="Add Post" />
-      <Form onSubmit={handleSubmit(onSubmit)}>
-        {serverError && <FormError>{serverError}</FormError>}
-        <Form.Group className="mb-3">
-          <Form.Label>Title</Form.Label>
-          <Form.Control
-            {...register("title")}
-            type="text"
-            placeholder="Write your title"
-          />
-          <Form.Text className="text-muted"></Form.Text>
-          {errors.title && <FormError>{errors.title.message}</FormError>}
-        </Form.Group>
+      <div className="white-background-container">
+        <Heading content="Add Post" />
+        <Form onSubmit={handleSubmit(onSubmit)}>
+          {serverError && <FormError>{serverError}</FormError>}
+          <Form.Group className="mb-3">
+            <Form.Label>Title</Form.Label>
+            <Form.Control
+              className="add-post-input"
+              {...register("title")}
+              type="text"
+              placeholder="Write your title"
+            />
+            <Form.Text className="text-muted"></Form.Text>
+            {errors.title && <FormError>{errors.title.message}</FormError>}
+          </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Body</Form.Label>
-          <Form.Control
-            {...register("body")}
-            placeholder="Write your text here"
-          />
-          <Form.Text className="text-muted"></Form.Text>
-          {errors.body && <FormError>{errors.body.message}</FormError>}
-        </Form.Group>
+          <Form.Group className="mb-3">
+            <Form.Label>Body</Form.Label>
+            <Form.Control
+              className="add-post-input"
+              {...register("body")}
+              placeholder="Write your text here"
+            />
+            <Form.Text className="text-muted"></Form.Text>
+            {errors.body && <FormError>{errors.body.message}</FormError>}
+          </Form.Group>
 
-        <Form.Group className="mb-3">
-          <Form.Label>Image</Form.Label>
-          <Form.Control
-            {...register("image")}
-            placeholder="Enter your image url here"
-          />
-          <Form.Text className="text-muted">
-            Must be a fully formed URL
-          </Form.Text>
-          {errors.image && <FormError>{errors.image.message}</FormError>}
-        </Form.Group>
-        <Button type="submit" className="addPost-btn">
-          {submitting ? "Adding..." : "Add"}
-        </Button>
-      </Form>
+          <Form.Group className="mb-3">
+            <Form.Label>Image</Form.Label>
+            <Form.Control
+              className="add-post-input"
+              {...register("image")}
+              placeholder="Enter your image url here"
+            />
+            <Form.Text className="text-muted">
+              Must be a fully formed URL
+            </Form.Text>
+            {errors.image && <FormError>{errors.image.message}</FormError>}
+          </Form.Group>
+          <Button type="submit" className="addPost-btn">
+            {submitting ? "Adding..." : "Add"}
+          </Button>
+        </Form>
+      </div>
     </>
   );
 }

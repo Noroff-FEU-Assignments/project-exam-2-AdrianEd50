@@ -1,50 +1,75 @@
 import React from "react";
 import PostCard from "./PostCard";
 import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
 import { token } from "../../utils/storage";
 import axios from "axios";
+import DeletePost from "./DeletePost";
 
-function viewPost() {
-  function ListOfPost() {
-    const [post, setPost] = useState([]);
-    const [loading, setLoading] = useState(true);
-    const [error, setError] = useState(null);
+function ViewPost() {
+  const SINGLE_POST = {
+    id: "",
+    title: "",
+    body: "",
+    media: "",
+    created: "",
+    _count: {
+      comments: "",
+      reactions: "",
+    },
+  };
+  const [post, setPost] = useState(SINGLE_POST);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
 
-    useEffect(function () {
-      async function retrivePost() {
-        const post__url =
-          BASE_URL + "social/posts/?_author=true&_reactions=true";
+  let { id } = useParams();
 
-        const options = {
-          headers: {
-            Authorization: `Bearer ${token}`,
-          },
-        };
+  const post__url =
+    BASE_URL + `social/posts/${id}?_author=true&_comments=true&_reactions=true`;
 
-        try {
-          const response = await axios.get(post__url, options);
-          console.log(response.data);
-          setPost(response.data);
-        } catch (error) {
-          console.log(error);
-          setError(error.toString());
-        } finally {
-          setLoading(false);
-        }
+  useEffect(function () {
+    async function retrivePost() {
+      const options = {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      };
+
+      try {
+        const response = await axios.get(post__url, options);
+        console.log(response.data);
+        setPost(response.data);
+      } catch (error) {
+        console.log(error);
+        setError(error.toString());
+      } finally {
+        setLoading(false);
       }
-      retrivePost();
-    }, []);
-    if (loading) return <div>Loading post...</div>;
+    }
+    retrivePost();
+  }, []);
+  if (loading) return <div>Loading post...</div>;
 
-    if (error) return <div>{}</div>;
+  if (error) return <div>{}</div>;
 
-    return (
-      <div className="post-list">
-        <PostCard />
+  return (
+    <>
+      <div className="white-background-container">
+        <PostCard
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          src={post.media}
+          comment_count={post._count.comments}
+          reaction_count={post._count.reactions}
+          created={post.created}
+          href={post.id}
+          author={post.author.name}
+        />
       </div>
-    );
-  }
+    </>
+  );
 }
 
-export default viewPost;
+export default ViewPost;

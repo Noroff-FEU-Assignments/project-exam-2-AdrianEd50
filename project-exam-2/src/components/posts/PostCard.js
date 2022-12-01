@@ -2,6 +2,7 @@ import { useState } from "react";
 import heartEyes from "../../images/emoji.png";
 import thumbsUp from "../../images/like.png";
 import comment from "../../images/chat.png";
+import DeletePost from "./DeletePost";
 
 export default function PostCard(post) {
   const [count1, setCount1] = useState(0);
@@ -67,6 +68,12 @@ export default function PostCard(post) {
             <img src={comment} /> {post.comment_count}
           </button>
         </div>
+        <button className="edit_button">
+          <a href={`/posts/${post.href}/edit`} className="edit_link">
+            Update post
+          </a>
+        </button>
+        <DeletePost />
       </div>
     </>
   );

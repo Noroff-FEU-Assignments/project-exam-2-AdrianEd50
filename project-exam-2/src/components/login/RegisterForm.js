@@ -63,7 +63,7 @@ export default function RegisterForm() {
       <Form onSubmit={handleSubmit(onSubmit)}>
         {registerError && <FormError>{registerError}</FormError>}
         <Form.Group className="mb-3">
-          <Form.Label>name</Form.Label>
+          <Form.Label>Name</Form.Label>
           <Form.Control
             {...register("name")}
             type="text"
@@ -89,7 +89,7 @@ export default function RegisterForm() {
         </Form.Group>
 
         <Form.Group className="mb-3">
-          <Form.Label>password</Form.Label>
+          <Form.Label>Password</Form.Label>
           <Form.Control
             {...register("password")}
             type="password"
