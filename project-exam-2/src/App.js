@@ -8,6 +8,8 @@ import Navigation from "./components/layout/Navigation";
 import { AuthProvider } from "./context/AuthContext";
 import AddPost from "../src/components/posts/AddPost";
 import EditPost from "../src/components/posts/EditPost";
+import ViewPost from "./components/posts/ViewPost";
+
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Container from "react-bootstrap/Container";
 
@@ -24,7 +26,8 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/posts" element={<Posts />} />
             <Route path="/posts/add" element={<AddPost />} />
-            <Route path="/posts/:id" element={<EditPost />} />
+            <Route path="/posts/:id" element={<ViewPost />} />
+            <Route path="/posts/:id/edit" element={<EditPost />} />
           </Routes>
         </Container>
       </Router>

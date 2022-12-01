@@ -16,7 +16,7 @@ export default function PostCard(post) {
 
   return (
     <>
-      <div className="post-card" href={`/post/${post.title}`}>
+      <div className="post-card">
         <a href={`/posts/${post.href}`} className="post-card__content-footer">
           <div className="post-card__content-text">
             <h2>{post.title}</h2>

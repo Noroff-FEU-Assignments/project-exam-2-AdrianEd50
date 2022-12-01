@@ -13,6 +13,7 @@ import { token } from "../../utils/storage";
 
 const schema = yup.object().shape({
   title: yup.string().required("Title is required"),
+  media: yup.string().url("must be formated url"),
 });
 
 function EditPost() {
@@ -122,15 +123,14 @@ function EditPost() {
         <Form.Group className="mb-3">
           <Form.Label>Image</Form.Label>
           <Form.Control
-            {...register("image")}
-            type="text"
+            {...register("media")}
             placeholder="Enter your image URL"
           />
           <Form.Text className="text-muted">
             must be a fully formed URL that links to a live and publicly
             accessible image
           </Form.Text>
-          {errors.password && <FormError>{errors.password.message}</FormError>}
+          {updateError && <FormError>{updateError}</FormError>}
         </Form.Group>
         <Button type="submit">{submitting ? "Updating..." : "Update"}</Button>
       </Form>
