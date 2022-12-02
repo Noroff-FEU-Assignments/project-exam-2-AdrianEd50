@@ -6,9 +6,12 @@ import { BASE_URL } from "../../constants/api";
 import axios from "axios";
 import { token } from "../../utils/storage";
 
-export default function PostCard(post) {
+export default function PostCard(props) {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
+
+  const post = props;
+
   const heartEyes_url = BASE_URL + `social/posts/` + post.href + `/react/😍`;
   const thumbsUp_url = BASE_URL + `social/posts/` + post.href + `/react/👍`;
 
@@ -72,13 +75,6 @@ export default function PostCard(post) {
     thumbsUpReactEmoji();
   };
 
-  /*const thumbsUpEmojiCount = (e) => {
-    setCount2(count1 + 1);
-  };
-  const heartEmojiCount = (e) => {
-    setCount1(count2 + 1);
-  };*/
-
   return (
     <>
       <div className="post-card">
@@ -135,8 +131,16 @@ export default function PostCard(post) {
     </>
   );
 }
+
 /*<div className="comments">
           <button className="button_comment">
             <img src={comment} /> {post.comment_count}
           </button>
         </div> */
+
+/*const thumbsUpEmojiCount = (e) => {
+    setCount2(count1 + 1);
+  };
+  const heartEmojiCount = (e) => {
+    setCount1(count2 + 1);
+  };*/
