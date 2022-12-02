@@ -1,7 +1,7 @@
 import React from "react";
 import PostCard from "./PostCard";
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
 import { token } from "../../utils/storage";
 import axios from "axios";
@@ -56,6 +56,9 @@ function ViewPost() {
   return (
     <>
       <div className="white-background-container">
+        <Link to="/posts" className="goBack-link">
+          Go back
+        </Link>
         <PostCard
           key={post.id}
           title={post.title}
@@ -67,6 +70,12 @@ function ViewPost() {
           href={post.id}
           author={post.author.name}
         />
+        <DeletePost />
+        <button className="edit_button">
+          <Link to={`/posts/${post.id}/edit`} className="edit_link">
+            Update post
+          </Link>
+        </button>
       </div>
     </>
   );

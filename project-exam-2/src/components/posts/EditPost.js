@@ -5,6 +5,7 @@ import { useParams } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
+import { Link, useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
 import axios from "axios";
 import { Form, Button } from "react-bootstrap";
@@ -24,6 +25,8 @@ function EditPost() {
   const [updatingPost, setUpdatingPost] = useState(false);
   const [getError, setGetError] = useState(null);
   const [updateError, setUpdateError] = useState(null);
+
+  const navigate = useNavigate();
 
   const {
     register,
@@ -76,6 +79,7 @@ function EditPost() {
       const response = await axios.put(updateUrl, data, options);
       console.log(response);
       setUpdated(true);
+      navigate(`/posts/${id}`);
     } catch (error) {
       console.log("error", error);
       setUpdateError(error.toString());
@@ -91,6 +95,11 @@ function EditPost() {
   return (
     <>
       <Heading content="Update post" />
+
+      <Link to="/posts" className="goBack-link">
+        Go back
+      </Link>
+
       <Form onSubmit={handleSubmit(onSubmit)}>
         {updated && (
           <div className="success">The post was successfully updated</div>

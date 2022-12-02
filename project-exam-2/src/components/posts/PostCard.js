@@ -1,19 +1,83 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import heartEyes from "../../images/emoji.png";
 import thumbsUp from "../../images/like.png";
 import comment from "../../images/chat.png";
-import DeletePost from "./DeletePost";
+import { BASE_URL } from "../../constants/api";
+import axios from "axios";
+import { token } from "../../utils/storage";
 
 export default function PostCard(post) {
   const [count1, setCount1] = useState(0);
   const [count2, setCount2] = useState(0);
+  const heartEyes_url = BASE_URL + `social/posts/` + post.href + `/react/😍`;
+  const thumbsUp_url = BASE_URL + `social/posts/` + post.href + `/react/👍`;
 
-  const thumbsUpEmojiCount = (e) => {
+  const heartReactEmoji = async () => {
+    axios({
+      method: "put",
+      url: heartEyes_url,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(function () {
+      console.log("reaction ok 😍");
+    });
+  };
+
+  const thumbsUpReactEmoji = async () => {
+    axios({
+      method: "put",
+      url: thumbsUp_url,
+      headers: {
+        Authorization: `Bearer ${token}`,
+      },
+    }).then(function () {
+      console.log("reaction ok 👍");
+    });
+  };
+
+  useEffect(() => {
+    const heartEmojiCount = () => {
+      let heartEyesEmoji = 0;
+      post.reactions.map(function (emoji) {
+        if (emoji.symbol === "😍") {
+          heartEyesEmoji = emoji.count;
+        }
+        return heartEyesEmoji;
+      });
+      return heartEyesEmoji;
+    };
+
+    const thumbsUpEmojiCount = () => {
+      let thumbsUpEmoji = 0;
+      post.reactions.map(function (emoji) {
+        if (emoji.symbol === "👍") {
+          thumbsUpEmoji = emoji.count;
+        }
+        return thumbsUpEmoji;
+      });
+      return thumbsUpEmoji;
+    };
+    setCount1(heartEmojiCount());
+    setCount2(thumbsUpEmojiCount());
+  }, [post.reactions]);
+
+  const hanleHeartsEyesEmojiCount = () => {
+    setCount1(count1 + 1);
+    heartReactEmoji();
+  };
+
+  const handleThumbsUpEmojiCount = () => {
+    setCount2(count2 + 1);
+    thumbsUpReactEmoji();
+  };
+
+  /*const thumbsUpEmojiCount = (e) => {
     setCount2(count1 + 1);
   };
   const heartEmojiCount = (e) => {
     setCount1(count2 + 1);
-  };
+  };*/
 
   return (
     <>
@@ -21,6 +85,11 @@ export default function PostCard(post) {
         <a href={`/posts/${post.href}`} className="post-card__content-footer">
           <div className="post-card__content-text">
             <h2>{post.title}</h2>
+          </div>
+          <div className="comments">
+            <button className="button_comment">
+              <img src={comment} /> {post.comment_count}
+            </button>
           </div>
         </a>
         <div className="post-card__content-text">
@@ -43,7 +112,7 @@ export default function PostCard(post) {
         <div className="reactions">
           <div className="reaction-buttons">
             <button
-              onClick={thumbsUpEmojiCount}
+              onClick={handleThumbsUpEmojiCount}
               value={"👍"}
               className="reaction-button"
             >
@@ -52,7 +121,7 @@ export default function PostCard(post) {
             <span className="reaction--count">{count1}</span>
 
             <button
-              onClick={heartEmojiCount}
+              onClick={hanleHeartsEyesEmojiCount}
               value={"😍"}
               className="reaction-button"
             >
@@ -62,19 +131,12 @@ export default function PostCard(post) {
           </div>
           <div className="reaction-count">{post.reaction_count}</div>
         </div>
-
-        <div className="comments">
-          <button className="button_comment">
-            <img src={comment} /> {post.comment_count}
-          </button>
-        </div>
-        <button className="edit_button">
-          <a href={`/posts/${post.href}/edit`} className="edit_link">
-            Update post
-          </a>
-        </button>
-        <DeletePost />
       </div>
     </>
   );
 }
+/*<div className="comments">
+          <button className="button_comment">
+            <img src={comment} /> {post.comment_count}
+          </button>
+        </div> */

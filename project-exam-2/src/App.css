@@ -137,11 +137,61 @@ h1 {
     margin: 10px 10px 10px 0px;
   }
 
+  .delete-btn { 
+    background: red;
+    border: red;
+    padding: 2px;
+    margin: 3px;
+    border-radius: 7px;
+  }
+  .delete-btn:hover { 
+    background: rgb(234, 40, 40);
+    border: red;
+    text-decoration: underline;
+  }
 
-
+  .edit_button {
+    background: #1FA710;
+    border: #1FA710;
+    margin: 0.4rem;
+    border-radius: 0.4rem;
+    
+  }
   
-/*Contact page*/
-.contact-cta { 
+  .edit_link {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .edit_link:hover {
+    color: #272727;
+    text-decoration: underline;
+  } 
+  
+  .edit_bt-cta { 
+    background: #1FA710;
+    border: #1FA710;
+    color: black;
+    border-radius: 15px;
+    padding: 0.5rem;
+    width: 100%;
+  }
+
+  .register-cta { 
+    background: #1FA710;
+    border: #1FA710;
+    color: black;
+    border-radius: 15px;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  .register-cta:hover { 
+    background: #1fa71087;
+    color: black;
+  }
+
+  .contact-cta { 
   background: #1FA710;
   border: #1FA710;
   color: #000000;
@@ -156,6 +206,18 @@ h1 {
 .contact-cta:hover { 
   background: #1fa71087;
 }
+
+.goBack-link { 
+  text-decoration: none;
+}
+
+.goBack-link:hover { 
+  text-decoration: underline;
+}
+
+  
+/*Contact page*/
+
 
 .error{ 
 color: red;
@@ -192,19 +254,7 @@ input, textarea {
 
 /*Register page*/
 
-.register-cta { 
-  background: #1FA710;
-  border: #1FA710;
-  color: black;
-  border-radius: 15px;
-  padding: 0.5rem;
-  width: 100%;
-}
 
-.register-cta:hover { 
-  background: #1fa71087;
-  color: black;
-}
 
 .register-input { 
   color: black;
@@ -274,33 +324,9 @@ input, textarea {
   color: #1FA710;
 }
 
-.edit_button {
-  background: #1FA710;
-  border: #1FA710;
-  margin: 0.4rem;
-  border-radius: 0.4rem;
-  
-}
 
 
-.edit_link {
-  color: #000000;
-  text-decoration: none;
-}
 
-.edit_link:hover {
-  color: #272727;
-  text-decoration: underline;
-} 
-
-.edit_bt-cta { 
-  background: #1FA710;
-  border: #1FA710;
-  color: black;
-  border-radius: 15px;
-  padding: 0.5rem;
-  width: 100%;
-}
 
 
 
