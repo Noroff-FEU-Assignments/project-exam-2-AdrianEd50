@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
 import { useState } from "react";
-import PropTypes from "react";
 import { useNavigate } from "react-router-dom";
 import { BASE_URL } from "../../constants/api";
 import { token } from "../../utils/storage";

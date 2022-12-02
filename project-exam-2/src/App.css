@@ -53,6 +53,64 @@ h1 {
   margin:  auto;
 }
 
+/*Home page*/
+.heading { 
+  font-size: 2.5rem;
+  font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.paragraph { 
+  font-size: 1.4rem;
+  font-family: sans-serif;
+  color: #586073;
+}
+
+.homePage_register_form { 
+  background: rgb(239, 235, 235);
+  margin-left: 50px;
+}
+
+.homePage_register_form p { 
+  margin: 0px 50px 0px 50px;
+}
+
+.home_register_btn  { 
+  background: #1FA710;
+  border: #1FA710;
+  padding: 7px;
+  margin: 10px 10px 10px 60px;
+  
+}
+
+.home_register_btn:hover  { 
+  background: #1fa71087;
+  border: #1fa71087; 
+}
+
+.home_register_btn a { 
+  padding: 7px;
+  margin: 10px;
+  color: #000000;
+  text-decoration: none;
+}
+
+.home_register_btn a:hover { 
+ 
+  text-decoration: underline;
+}
+
+.home_container { 
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  margin: 50px;
+}
+
+.down-arrow img {
+  width: 20px;
+  height: 100%;
+}
+
+
 /*CTA*/
 .card-button {
   background: #1FA710;
@@ -121,6 +179,7 @@ h1 {
     border: #1FA710;
     color: #000000;
     text-decoration: none;
+    margin: 0px 50px 0px 50px;
   }
   
   .add-btn:hover { 

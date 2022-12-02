@@ -41,6 +41,10 @@ function Navigation() {
                 <NavLink to="/posts/add" className="nav-link">
                   Add Post
                 </NavLink>
+
+                <NavLink to="/account" className="nav-link">
+                  Account
+                </NavLink>
               </>
             ) : (
               <NavLink to="/login" className="nav-link">

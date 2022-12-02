@@ -1,16 +1,15 @@
 import React from "react";
 import Heading from "../layout/Heading";
-import LoginForm from "./LoginForm";
 
-function LoginPage() {
+function Account() {
   return (
     <>
       <div className="white-background-container">
-        <Heading content="Login" />
-        <LoginForm />
+        <Heading content="Your Account" />
+        <h2>Name</h2>
       </div>
     </>
   );
 }
 
-export default LoginPage;
+export default Account;

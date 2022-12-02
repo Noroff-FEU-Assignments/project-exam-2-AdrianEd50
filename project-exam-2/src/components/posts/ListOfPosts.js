@@ -39,7 +39,18 @@ export default function ListOfPosts() {
   return (
     <div className="post-list">
       {posts.map((post) => (
-        <PostCard post={post} />
+        <PostCard
+          key={post.id}
+          title={post.title}
+          body={post.body}
+          src={post.media}
+          comment_count={post._count.comments}
+          reaction_count={post._count.reactions}
+          created={post.created}
+          href={post.id}
+          author={post.author.name}
+          reactions={post.reactions}
+        />
       ))}
     </div>
   );

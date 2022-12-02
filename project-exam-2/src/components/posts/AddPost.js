@@ -1,6 +1,6 @@
 import React from "react";
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useForm } from "react-hook-form";
 import * as yup from "yup";
 import { yupResolver } from "@hookform/resolvers/yup";
@@ -57,6 +57,9 @@ function AddPost() {
   return (
     <>
       <div className="white-background-container">
+        <Link to="/posts" className="goBack-link">
+          Go back
+        </Link>
         <Heading content="Add Post" />
         <Form onSubmit={handleSubmit(onSubmit)}>
           {serverError && <FormError>{serverError}</FormError>}
