@@ -39,11 +39,9 @@ export default function RegisterForm() {
     setSubmitting(true);
     const REGISTER_URL = BASE_URL + "social/auth/register";
     setRegisterError(null);
-    console.log(data);
 
     try {
       const response = await axios.post(REGISTER_URL, data);
-      console.log(response.status === 201);
       localStorage.setItem("new_user", response.data.name);
       if (response.status === 201) {
         navigate(`/login`);
@@ -51,7 +49,6 @@ export default function RegisterForm() {
         setRegisterError();
       }
     } catch (error) {
-      console.log(error);
       setRegisterError();
     } finally {
       setSubmitting(false);

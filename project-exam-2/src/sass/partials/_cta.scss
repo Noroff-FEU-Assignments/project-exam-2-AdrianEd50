@@ -1,0 +1,190 @@
+.home_register_btn  { 
+    background: #1FA710;
+    border: #1FA710;
+    padding: 7px;
+    margin: 10px 10px 10px 30px;
+    
+  }
+  
+  .home_register_btn:hover  { 
+    background: #1fa71087;
+    border: #1fa71087; 
+  }
+  
+  .home_register_btn a { 
+    padding: 7px;
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  .home_register_btn a:hover { 
+   
+    text-decoration: underline;
+  }
+
+  .card-button {
+    background: #1FA710;
+    border: #1FA710;
+    padding: 7px;
+    margin: 10px;
+  }
+  
+  .card-button:hover { 
+    background: #1fa71087;
+  }
+  
+  .login-cta { 
+    background: #1FA710;
+    border: #1FA710;
+    color: black;
+    border-radius: 15px;
+    padding: 0.5rem;
+    width: 100%;
+  }
+  
+  .login-cta:hover { 
+    background: #1fa71087;
+    color: black;
+  }
+  
+  .logout-cta { 
+    background: #1FA710;
+    border: #1FA710;
+    padding: 2px;
+    margin: 5px;
+    border-radius: 5px;
+  }
+  
+  .logout-cta:hover { 
+    background: #1fa71087;
+    text-decoration: underline;
+  }
+  
+  .button_comment { 
+      display: flex;
+      align-items: center;
+      padding: 0;
+      background-color: transparent;
+      outline: none;
+      border: none;
+      font-size: .9rem;
+    }
+  
+    .addPost-btn { 
+      background: #1FA710;
+      border: #1FA710;
+      color: #000000;
+      padding: 7px;
+      margin: 3px;
+      border-radius: 7px;
+    }
+    
+    .addPost-btn:hover { 
+      background: #30b222;
+      
+    }
+    
+    .add-btn { 
+      background: #1FA710;
+      border: #1FA710;
+      color: #000000;
+      text-decoration: none;
+      margin: 0px 50px 0px 50px;
+    }
+    
+    .add-btn:hover { 
+      background: #30b222;
+      color: #000000;
+      text-decoration: underline;
+    }
+    
+    .add-post-input { 
+      color: black;
+      border: 2px solid;
+      border-radius: 5px;
+      padding: 6px;
+      margin: 10px 10px 10px 0px;
+    }
+  
+    .delete-btn { 
+      background: red;
+      border: red;
+      padding: 2px;
+      margin: 3px;
+      border-radius: 7px;
+    }
+    .delete-btn:hover { 
+      background: rgb(234, 40, 40);
+      border: red;
+      text-decoration: underline;
+    }
+  
+    .edit_button {
+      background: #1FA710;
+      border: #1FA710;
+      margin: 0.4rem;
+      border-radius: 0.4rem;
+      
+    }
+
+    .edit_link {
+        color: #000000;
+        text-decoration: none;
+      }
+      
+      .edit_link:hover {
+        color: #272727;
+        text-decoration: underline;
+      } 
+      
+      .edit_bt-cta { 
+        background: #1FA710;
+        border: #1FA710;
+        color: black;
+        border-radius: 15px;
+        padding: 0.5rem;
+        width: 100%;
+      }
+    
+      .register-cta { 
+        background: #1FA710;
+        border: #1FA710;
+        color: black;
+        border-radius: 15px;
+        padding: 0.5rem;
+        width: 100%;
+      }
+      
+      .register-cta:hover { 
+        background: #1fa71087;
+        color: black;
+      }
+    
+      .contact-cta { 
+      background: #1FA710;
+      border: #1FA710;
+      color: #000000;
+      border-radius: 7px;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-top: 40px;
+      font-size: 1rem;
+      width: 100%;
+      font-family: sans-serif;}
+    
+    .contact-cta:hover { 
+      background: #1fa71087;
+    }
+    
+    .goBack-link { 
+      text-decoration: none;
+    }
+    
+    .goBack-link:hover { 
+      text-decoration: underline;
+    }
+
+    .reaction-button { 
+      margin: 0.4rem;
+      border-radius: 0.4rem;
+    }

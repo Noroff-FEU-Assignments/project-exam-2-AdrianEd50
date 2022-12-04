@@ -21,10 +21,8 @@ export default function ListOfPosts() {
 
       try {
         const response = await axios.get(post_url, options);
-        console.log(response.data);
         setPosts(response.data);
       } catch (error) {
-        console.log(error);
         setError(error.toString());
       } finally {
         setLoading(false);

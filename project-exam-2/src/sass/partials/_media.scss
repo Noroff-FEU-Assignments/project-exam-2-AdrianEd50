@@ -1,0 +1,29 @@
+@media (min-width: 750px) { 
+    .home_container { 
+      grid-template-columns: repeat(2,1fr);
+      grid-column: auto;
+    }
+  
+    .home_register_btn  { 
+     margin-left: 50px;
+    }
+  }
+  
+  @media (min-width: 450px) { 
+    .home_register_btn  { 
+    margin: 10px 10px 10px 60px;
+  }
+  }
+  
+  
+  @media (min-width: 600px) { 
+    .home_register_btn  { 
+    margin: 10px 10px 10px 120px;
+  }
+  }
+  
+  @media (min-width: 700px) { 
+    .home_register_btn  { 
+    margin: 10px 10px 10px 170px;
+  }
+  }

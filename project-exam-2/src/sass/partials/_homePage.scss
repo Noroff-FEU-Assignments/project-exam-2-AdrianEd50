@@ -1,0 +1,15 @@
+.heading { 
+    font-size: 2.5rem;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+  }
+
+  .home_container { 
+    display: grid;
+    margin: 20px;
+    grid-template-columns: 1fr;
+}
+
+.down-arrow img {
+  width: 20px;
+  height: 100%;
+}

@@ -20,7 +20,6 @@ const schema = yup.object().shape({
 });
 
 export default function LoginForm() {
-  //const new_user = localStorage.getItem("new_user");
   const [submitting, setSubmitting] = useState(false);
   const [loginError, setLoginError] = useState(null);
 
@@ -41,14 +40,11 @@ export default function LoginForm() {
     const login_url = BASE_URL + "social/auth/login";
 
     setLoginError(null);
-    console.log(data);
 
     try {
       const response = await axios.post(login_url, data);
-      console.log(response.data);
       saveToken(response.data.accessToken);
-      //saveUsername(response.data.name);
-      //saveUserEmail(response.data.email);
+
       setAuth(response.data);
       if (response.data) {
         navigate(`/posts`);
@@ -56,7 +52,6 @@ export default function LoginForm() {
         setLoginError();
       }
     } catch (error) {
-      console.log(error);
       setLoginError();
     } finally {
       setSubmitting(false);

@@ -23,11 +23,7 @@ function FormValidation() {
     resolver: yupResolver(schema),
   });
 
-  function onSubmit(data) {
-    console.log(data);
-  }
-
-  console.log(errors);
+  function onSubmit(data) {}
 
   return (
     <>

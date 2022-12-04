@@ -27,7 +27,6 @@ export default function DeletePost() {
     if (confirmDelete) {
       try {
         const response = await axios.delete(url, options);
-        console.log(response);
         navigate("/posts");
       } catch (error) {
         setError(error);
@@ -41,8 +40,3 @@ export default function DeletePost() {
     </button>
   );
 }
-
-/*DeletePost.propTypes = {
-  id: PropTypes.number.isRequired,
-};
-*/

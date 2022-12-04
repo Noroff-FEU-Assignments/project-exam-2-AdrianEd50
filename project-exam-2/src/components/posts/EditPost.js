@@ -50,10 +50,8 @@ function EditPost() {
     async function getPost() {
       try {
         const response = await axios.get(updateUrl, options);
-        console.log(response.data);
         setPost(response.data);
       } catch (error) {
-        console.log(error);
         setGetError(error.toString());
       } finally {
         setGettingPost(false);
@@ -67,8 +65,6 @@ function EditPost() {
     setUpdateError(null);
     setUpdated(false);
 
-    console.log(data);
-
     const options = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -77,11 +73,9 @@ function EditPost() {
 
     try {
       const response = await axios.put(updateUrl, data, options);
-      console.log(response);
       setUpdated(true);
       navigate(`/posts/${id}`);
     } catch (error) {
-      console.log("error", error);
       setUpdateError(error.toString());
     } finally {
       setUpdatingPost(false);

@@ -38,10 +38,8 @@ function ViewPost() {
 
       try {
         const response = await axios.get(post__url, options);
-        console.log(response.data);
         setPost(response.data);
       } catch (error) {
-        console.log(error);
         setError(error.toString());
       } finally {
         setLoading(false);

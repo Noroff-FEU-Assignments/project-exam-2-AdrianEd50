@@ -35,8 +35,6 @@ function AddPost() {
     setSubmitting(true);
     setServerError(null);
 
-    console.log(data);
-
     const options = {
       headers: {
         Authorization: `Bearer ${token}`,
@@ -45,10 +43,8 @@ function AddPost() {
 
     try {
       const response = await axios.post(addPostUrl, data, options);
-      console.log(response.data);
       navigate("/posts");
     } catch (error) {
-      console.log("error", error);
       setServerError(error.toString());
     } finally {
       setSubmitting(false);
